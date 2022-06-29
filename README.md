@@ -24,6 +24,7 @@
 
 - sl ..\..\ ; python -m manage runserver
 
+
 ## Comandos ejecutados para Creacion de nueva rama   "*crea-Login-Logout*"
 - git checkout -b crea-Login-Logout (crea nueva rama y mueve hacia ella)
 - git add --all
