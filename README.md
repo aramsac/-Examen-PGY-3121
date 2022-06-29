@@ -1,10 +1,10 @@
-# Prueba-3-PGY-3121
+# Prueba-4-PGY-3121
 - Nombre: Arnoldo Ramos
 - curso: PROGRAMACIÓN WEB
 - *DuocUc*
 
 ## comandos para levantar app
-- git clone https://github.com/aramsac/Prueba-3-PGY-3121.git
+- git clone https://github.com/aramsac/Prueba-4-PGY-3121.git
 - .\env\Scripts\activate (windows)
 - source env/Scripts/activate (linux)
 - pip install -r requirements.txt
