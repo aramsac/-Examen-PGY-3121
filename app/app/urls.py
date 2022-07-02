@@ -27,12 +27,16 @@ from app.views.mantenedor_contacto import cargar_contacto
 from app.views.cuenta_usuario import crear_usuario, inicio_seccion
 from app.views.mantenedor_usuario import cargar_usuarios 
 
+
+
 """ para el login """
 from app.views import login 
 from app.views import logout
 from django.contrib.auth.models import Permission, ContentType
 from app.models import Contacto
 from app.models import Usuario
+
+from app.views import errorpage
 
 admin.site.register(Permission)
 admin.site.register(ContentType)
@@ -55,5 +59,7 @@ urlpatterns = [
     path('usuarios',cargar_usuarios),
     path('loginAdmin', login.index),
     path('logout/', logout.logout_user),
+    path('error-401',errorpage.error_401_page),
+    path('error-403',errorpage.error_403_page)
 
 ]

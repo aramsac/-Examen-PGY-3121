@@ -1,6 +1,8 @@
 {% extends "navbar.html" %}formulario de contacto{% load static %}
 {% block content  %}
 
+<!-- para la autentificacion -->
+{% if perms.app.view_usuario %}
 <link rel="stylesheet" href="{% static 'css/tablas/tablaMantenedor.css' %}">
 
 <section class="ftco-section" style="margin-top:200px ;">
@@ -33,6 +35,9 @@
                             <td>{{ i.contrasena}}</td>
                             <td>{{ i.email}}</td>
                             <td>
+
+                            {% if perms.app.change_usuario %}
+
                               <img class="iconoTabla" src="{% static 'img/iconos-tabla/boton-editar.png' %}"
                                 data-bs-toggle="modal" 
                                 data-bs-target="#modal-actualizar-{{i.codigo}}"
@@ -86,6 +91,8 @@
                               <!-- fin del modal actualizar -->
 
                             </td>
+                            {% endif %}
+                            {% if perms.app.delete_usuario %}
 
                             <td>
                                 <img class="iconoTabla" src="{% static 'img/iconos-tabla/eliminar.png' %}"
@@ -128,7 +135,7 @@
 
                             </td>
                         </tr>
-
+                        {% endif %}
                         
                        {% endfor %}
                       </tbody>
@@ -138,4 +145,5 @@
         </div>
     </div>
 </section>
+{% endif %}
 {% endblock %}
