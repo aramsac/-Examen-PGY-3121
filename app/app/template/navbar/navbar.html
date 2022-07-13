@@ -92,11 +92,29 @@
             </a>
           </li>
 
+
+          <li class="nav-item" data-bs-toggle="tooltip" data-bs-html="true" title=" inicio ">
+            <a class="nav-link" href="/carrito-de-compra">
+              <strong>
+               <img class="iconoNavbar" src="{% static '\img\icono\carro-de-compras.png' %}" width="1">
+                
+
+                <br>
+                <p>carrito de compras</p>
+            </strong>
+            </a>
+          </li>
+
+
           <li class="nav-item" >
             <a class="nav-link" href="/contacto" >
               <button class="btn btn-outline-success" id="hacerPedido" style="color:black;position:relative; left:0%;"> hacer Pedido! </button>
             </a>
           </li>
+
+
+
+
 
           {% if user.is_authenticated %}
 

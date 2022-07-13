@@ -28,6 +28,13 @@ from app.views.cuenta_usuario import crear_usuario, inicio_seccion
 from app.views.mantenedor_usuario import cargar_usuarios 
 
 
+"""carrito compra """
+from app.views.compraTienda import tienda
+from app.views.compraTienda import tienda, agregar_producto, eliminar_producto, restar_producto, limpiar_carritoCompra
+
+
+""" api productos """
+from app.api.api_productos import apiproductos
 
 """ para el login """
 from app.views import login 
@@ -60,6 +67,18 @@ urlpatterns = [
     path('loginAdmin', login.index),
     path('logout/', logout.logout_user),
     path('error-401',errorpage.error_401_page),
-    path('error-403',errorpage.error_403_page)
+    path('error-403',errorpage.error_403_page),
+
+    #carrito de compra
+    path('carrito-de-compra', tienda),
+    path('agregar/<int:producto_id>/', agregar_producto, name="Add"),
+    path('eliminar/<int:producto_id>/', eliminar_producto, name="Del"),
+    path('restar/<int:producto_id>/', restar_producto, name="Sub"),
+    path('limpiar/', limpiar_carritoCompra, name="CLS"),
+
+
+    #api 
+    #API REST
+    path('api/apiproductos', apiproductos)
 
 ]

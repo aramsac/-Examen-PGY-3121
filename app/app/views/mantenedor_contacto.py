@@ -1,7 +1,7 @@
 import errno
 from django.shortcuts import render
 from app.models import Contacto
-from app.views.login import authorization
+from app.views.login import authorization # login
 
 def cargar_contacto(request):
 
@@ -9,7 +9,7 @@ def cargar_contacto(request):
     print('method -> ', request.method)
     if request.method == 'GET':
         try:
-            auth, error = authorization(request,'delete_contacto')
+            auth, error = authorization(request,'delete_contacto') #login
             codigo = request.GET['codigo']
             print('codigo -> ', codigo)
             contacto = Contacto.objects.get(pk=codigo)

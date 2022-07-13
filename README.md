@@ -7,6 +7,7 @@
 - git clone https://github.com/aramsac/Prueba-4-PGY-3121.git
 - .\env\Scripts\activate (windows)
 - source env/Scripts/activate (linux)
+- python -m pip install Django djangorestframework requests psycopg2
 - pip install -r requirements.txt
 - cd app ; python -m manage runserver (windows)
 - cd app && python3 -m manage runserver (linux)

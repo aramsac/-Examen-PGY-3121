@@ -100,6 +100,20 @@ class Usuario(models.Model):
         db_table = 'usuario'
 
 
+class Producto(models.Model):
+    id          = models.BigAutoField(primary_key=True)
+    nombre      = models.CharField(max_length=64, blank=True, null=True)
+    categoria   = models.CharField(max_length=64, blank=True, null=True)
+    precio      = models.IntegerField()
+
+    class Meta:
+        managed = False
+        db_table = 'producto'
+
+    def __str__(self):
+        return f'{self.nombre} --> {self.precio}'
+
+
 
 
 
